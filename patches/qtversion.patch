@@ -1,0 +1,22 @@
+--- a/setup.py~	2008-12-15 03:55:03.000000000 -0600
++++ b/setup.py	2015-04-28 01:12:37.556839393 -0500
+@@ -45,15 +45,15 @@
+         print "###############################################################"
+         sys.exit(1)
+
+-    qtVersion = qVersion()
+-    if qtVersion < '4.4' :
++    qtVersion = tuple(qVersion().split('.'))
++    if qtVersion < (4, 4) :
+         print "###############################################################"
+         print "You need Qt v4.4 or greater to run ViTables!. Exiting..."
+         print "###############################################################"
+         sys.exit(1)
+
+-    pyqtVersion = PYQT_VERSION_STR
+-    if pyqtVersion < '4.4' :
++    pyqtVersion = tuple(PYQT_VERSION_STR.split('.'))
++    if pyqtVersion < (4, 4) :
+         print "###############################################################"
+         print "You need PyQt v4.4 or greater to run ViTables!. Exiting..."
+         print "###############################################################"
